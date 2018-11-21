@@ -156,18 +156,21 @@ public class GUI extends Application {
 		stayBtn.addButton(stayButtonLabel, 125, 60, 575, 600, gamePane);
 		
 		
+		// Store Verdana as a string in order to reuse and save storage
+		String verdana = "Verdana";
+		
 //		Sends the x and y placement, label of the text, the font, the size of the text, the color
 //		of the text, and the pane to add the text to
 		ToGUI textDealer = new ToGUI();
-		textDealer.addText(415, 75, "DEALER", "Verdana", 45, Color.YELLOW, gamePane);
+		textDealer.addText(415, 75, "DEALER", verdana, 45, Color.YELLOW, gamePane);
 		
 		ToGUI textPlayer = new ToGUI();
-		textPlayer.addText(415, 415, "YOU", "Verdana", 45, Color.YELLOW, gamePane);	
+		textPlayer.addText(415, 415, "YOU", verdana, 45, Color.YELLOW, gamePane);	
 		
 		Scene gameScene = new Scene(gamePane, paneWidth, paneHeight);
 		
 		ToGUI textPlayerScore = new ToGUI();
-		textPlayerScore.addText(510, 415, "", "Verdana", 45, Color.YELLOW, gamePane);
+		textPlayerScore.addText(510, 415, "", verdana, 45, Color.YELLOW, gamePane);
 //		Enters game and starts the game
 		
 //		Each element for the first two cards in the GUI are created outside setOnAction to access them elsewhere in the GUI class
@@ -283,7 +286,7 @@ public class GUI extends Application {
 		});
 		
 		ToGUI textDealerScore = new ToGUI();
-		textDealerScore.addText(543, 75, "", "Verdana", 45, Color.YELLOW, gamePane);
+		textDealerScore.addText(543, 75, "", verdana, 45, Color.YELLOW, gamePane);
 		
 //		Action when user clicks the stay button
 		(stayBtn.btn).setOnAction(new EventHandler<ActionEvent>()
@@ -324,15 +327,15 @@ public class GUI extends Application {
 				if (Game.humanWin())
 				{
 					temp = "YOU WON";
-					textWon.addText(347, 325, temp, "Verdana", 65, Color.YELLOW, gamePane);
+					textWon.addText(347, 325, temp, verdana, 65, Color.YELLOW, gamePane);
 				}
 				else if (Game.dealerWin()){
 					temp = "DEALER WON";
-					textWon.addText(295, 325, temp, "Verdana", 65, Color.YELLOW, gamePane);
+					textWon.addText(295, 325, temp, verdana, 65, Color.YELLOW, gamePane);
 				}
 				else if (Game.draw()){
 					temp = "DRAW";
-					textWon.addText(405, 325, temp, "Verdana", 65, Color.YELLOW, gamePane);
+					textWon.addText(405, 325, temp, verdana, 65, Color.YELLOW, gamePane);
 				}
 
 			}
